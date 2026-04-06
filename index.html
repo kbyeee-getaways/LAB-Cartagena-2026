@@ -82,13 +82,14 @@
   .hero-nav {
     display: flex; flex-direction: column; align-items: center; gap: 10px;
     animation: fadeUp 0.8s 0.3s ease both;
+    width: 100%;
   }
 
-  .hero-nav-row { display: flex; gap: 10px; justify-content: center; }
+  .hero-nav-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding: 0 16px; }
 
   .hero-nav-pill {
     background: var(--terracotta-pale); border: 1px solid rgba(196,97,58,0.2);
-    border-radius: 100px; padding: 12px 28px; font-size: 14px; font-weight: 500;
+    border-radius: 100px; padding: 12px 24px; font-size: 13px; font-weight: 500;
     color: var(--terracotta); letter-spacing: 0.5px; text-decoration: none;
     white-space: nowrap; transition: background 0.2s, border-color 0.2s, transform 0.2s;
     display: inline-block;
@@ -179,12 +180,12 @@
   .tips-header { text-align: center; margin-bottom: 48px; }
   .tips-header h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--midnight); margin-bottom: 10px; }
   .tips-header p { font-size: 15px; color: var(--muted); font-weight: 300; }
-  .tips-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .tip-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(196,97,58,0.15); border-radius: 20px; padding: 24px; transition: background 0.3s, border-color 0.3s; }
+  .tips-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .tip-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(196,97,58,0.15); border-radius: 20px; padding: 14px; transition: background 0.3s, border-color 0.3s; }
   .tip-card:hover { background: rgba(255,255,255,0.85); border-color: rgba(196,97,58,0.3); }
-  .tip-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 16px; background: rgba(196,97,58,0.12); }
-  .tip-title { font-size: 14px; font-weight: 500; color: var(--midnight); margin-bottom: 8px; }
-  .tip-text { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.7; }
+  .tip-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; margin-bottom: 8px; background: rgba(196,97,58,0.12); }
+  .tip-title { font-size: 12px; font-weight: 500; color: var(--midnight); margin-bottom: 6px; }
+  .tip-text { font-size: 11px; color: var(--muted); font-weight: 300; line-height: 1.5; }
 
   /* ─── PACKING LIST ─── */
   .packing-section { background: var(--warm-white); padding: 80px 24px 100px; }
@@ -332,13 +333,25 @@
   .day-card:nth-child(5) { animation-delay: 0.5s; }
 
   @media (max-width: 600px) {
-    .day-card { grid-template-columns: 90px 1fr; }
-    .day-number { font-size: 40px; }
-    .day-body { padding: 20px 18px; }
-    .day-sidebar { padding: 24px 10px; }
-    .event-time-col { flex: 0 0 56px; }
+    .day-card { grid-template-columns: 72px 1fr; }
+    .day-number { font-size: 32px; }
+    .day-label { font-size: 9px; letter-spacing: 1.5px; }
+    .day-body { padding: 16px 14px; }
+    .day-sidebar { padding: 20px 8px; }
+    .event-time-col { flex: 0 0 52px; }
+    .event-time { font-size: 11px; }
+    .event-title { font-size: 14px; }
+    .event-desc { font-size: 12px; }
     .day-header { flex-direction: column; }
-    .hero-nav-pill { padding: 11px 20px; font-size: 13px; }
+    .hero-nav-pill { padding: 10px 18px; font-size: 13px; }
+    .date-pill { font-size: 11px; padding: 8px 14px; }
+    .days-section { padding: 0 16px 80px; }
+    .tips-section { padding: 60px 16px; }
+    .tip-card { padding: 16px; }
+    .tip-title { font-size: 13px; }
+    .tip-text { font-size: 12px; }
+    .section-header { padding: 48px 16px 32px; }
+    .section-header h2 { font-size: 28px; }
   }
 </style>
 </head>
@@ -349,7 +362,7 @@
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
   <div class="hero-content">
-    <div class="hero-badge">Girls Trip ✦ May 2026</div>
+    <div class="hero-badge">L.A.B. Girls Trip ✦ May 2026</div>
     <h1><em>Cartagena</em><br>Colombia</h1>
     <p class="hero-sub">Sun, sea & sisterhood on the Caribbean coast</p>
     <nav class="hero-nav">
@@ -453,7 +466,7 @@
                   </tr>
                   <tr>
                     <td><div class="flight-name">Brandi</div><div class="flight-number"></div></td>
-                    <td><span class="flight-time-badge">1:00 PM</span></td>
+                    <td><span class="flight-time-badge">4:00 PM</span></td>
                   </tr>
                 </tbody>
               </table>
