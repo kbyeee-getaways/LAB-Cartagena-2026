@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartagena Girls Trip 🌺 May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDF6EE;
+    --warm-white: #FFFBF5;
+    --terracotta: #C4613A;
+    --terracotta-light: #E8956D;
+    --terracotta-pale: #FAE8DE;
+    --gold-light: #F0D080;
+    --teal-light: #5BAAA0;
+    --blush: #E8A0AA;
+    --midnight: #1A1410;
+    --dark-brown: #3D2B1F;
+    --muted: #8C7A6E;
+    --border: rgba(61, 43, 31, 0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-brown);
+    min-height: 100vh;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 60px 24px; overflow: hidden; background: var(--warm-white);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(196,97,58,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(212,168,75,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 50%, rgba(45,122,110,0.07) 0%, transparent 60%);
+    z-index: 0;
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(196,97,58,0.03) 40px, rgba(196,97,58,0.03) 41px),
+      repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(212,168,75,0.03) 40px, rgba(212,168,75,0.03) 41px);
+    z-index: 0;
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 680px; margin-bottom: 80px; }
+
+  .hero-badge {
+    display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--terracotta);
+    border: 1px solid rgba(196,97,58,0.3); border-radius: 100px;
+    padding: 6px 20px; margin-bottom: 28px; animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(52px, 9vw, 96px); font-weight: 700; line-height: 0.95;
+    color: var(--midnight); margin-bottom: 8px; animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--terracotta); }
+
+  .hero-sub {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(18px, 3vw, 26px); font-weight: 400; font-style: italic;
+    color: var(--muted); margin: 18px 0 36px; animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-nav {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-nav-row { display: flex; gap: 10px; justify-content: center; }
+
+  .hero-nav-pill {
+    background: var(--terracotta-pale); border: 1px solid rgba(196,97,58,0.2);
+    border-radius: 100px; padding: 12px 28px; font-size: 14px; font-weight: 500;
+    color: var(--terracotta); letter-spacing: 0.5px; text-decoration: none;
+    white-space: nowrap; transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .hero-nav-pill:hover {
+    background: var(--terracotta); color: var(--warm-white);
+    border-color: var(--terracotta); transform: translateY(-2px);
+  }
+
+  .scroll-hint {
+    position: absolute; bottom: 32px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--muted); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    animation: scrollFadeUp 1s 0.6s ease both;
+  }
+
+  .scroll-arrow {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--muted), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-header { text-align: center; padding: 72px 24px 40px; }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--midnight); margin-bottom: 10px; }
+  .section-header p { font-size: 16px; color: var(--muted); font-weight: 300; }
+
+  /* ─── DATE PILLS ─── */
+  .date-pills-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 48px; }
+  .date-pills-row { display: flex; gap: 10px; justify-content: center; }
+
+  .date-pill {
+    background: var(--terracotta-pale); border: 1px solid rgba(196,97,58,0.2);
+    border-radius: 100px; padding: 9px 18px; font-size: 12px; font-weight: 500;
+    color: var(--terracotta); letter-spacing: 0.4px; text-decoration: none;
+    white-space: nowrap; transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .date-pill:hover {
+    background: var(--terracotta); color: var(--warm-white);
+    border-color: var(--terracotta); transform: translateY(-2px);
+  }
+
+  /* ─── DAY CARDS ─── */
+  .days-section { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
+
+  .day-card {
+    display: grid; grid-template-columns: 140px 1fr; margin-bottom: 32px;
+    border-radius: 24px; overflow: hidden; border: 1px solid var(--border);
+    background: var(--warm-white); transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .day-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(26,20,16,0.1); }
+
+  .day-sidebar {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 32px 16px; background: var(--terracotta-pale); color: var(--terracotta);
+  }
+
+  .day-number { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700; line-height: 1; opacity: 0.9; }
+  .day-label { font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; opacity: 0.65; margin-top: 4px; }
+  .day-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 16px; opacity: 0.5; background: var(--terracotta); }
+
+  .day-body { padding: 28px 32px; border-left: 1px solid var(--border); }
+  .day-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+  .day-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--midnight); line-height: 1.2; }
+  .day-date-label { font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 2px; }
+
+  .events-list { display: flex; flex-direction: column; gap: 14px; }
+  .event-item { display: flex; gap: 16px; align-items: flex-start; }
+  .event-time-col { flex: 0 0 72px; padding-top: 2px; }
+  .event-time { font-size: 12px; font-weight: 500; letter-spacing: 0.5px; color: var(--terracotta); }
+  .event-content { flex: 1; border-left: 1px solid var(--border); padding-left: 16px; }
+  .event-title { font-size: 15px; font-weight: 500; color: var(--midnight); margin-bottom: 4px; }
+  .event-desc { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.6; }
+  .event-tag {
+    display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; border: 1px solid rgba(196,97,58,0.2); border-radius: 100px;
+    padding: 3px 10px; margin-top: 8px; background: var(--terracotta-pale); color: var(--terracotta);
+  }
+
+  /* ─── GOOD TO KNOW ─── */
+  .tips-section { background: var(--terracotta-pale); padding: 80px 24px; }
+  .tips-inner { max-width: 900px; margin: 0 auto; }
+  .tips-header { text-align: center; margin-bottom: 48px; }
+  .tips-header h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--midnight); margin-bottom: 10px; }
+  .tips-header p { font-size: 15px; color: var(--muted); font-weight: 300; }
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .tip-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(196,97,58,0.15); border-radius: 20px; padding: 24px; transition: background 0.3s, border-color 0.3s; }
+  .tip-card:hover { background: rgba(255,255,255,0.85); border-color: rgba(196,97,58,0.3); }
+  .tip-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 16px; background: rgba(196,97,58,0.12); }
+  .tip-title { font-size: 14px; font-weight: 500; color: var(--midnight); margin-bottom: 8px; }
+  .tip-text { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.7; }
+
+  /* ─── PACKING LIST ─── */
+  .packing-section { background: var(--warm-white); padding: 80px 24px 100px; }
+  .packing-inner { max-width: 760px; margin: 0 auto; }
+  .packing-header { text-align: center; margin-bottom: 40px; }
+  .packing-header h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--midnight); margin-bottom: 10px; }
+  .packing-header p { font-size: 15px; color: var(--muted); font-weight: 300; }
+
+  .progress-wrap { margin-bottom: 36px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 8px; font-weight: 500; }
+  .progress-bar-bg { background: var(--terracotta-pale); border-radius: 100px; height: 6px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: var(--terracotta); border-radius: 100px; width: 0%; transition: width 0.4s ease; }
+
+  /* ─── HOTEL INFO CARD ─── */
+  .hotel-card {
+    max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+  }
+
+  .hotel-inner {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 20px; overflow: hidden;
+  }
+
+  .hotel-header {
+    background: var(--terracotta); padding: 14px 24px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .hotel-header-title {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+    color: var(--warm-white);
+  }
+
+  .hotel-body { padding: 20px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+
+  .hotel-detail-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 4px; }
+  .hotel-detail-value { font-size: 14px; font-weight: 500; color: var(--midnight); line-height: 1.4; }
+  .hotel-detail-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ─── FLIGHTS TABLE ─── */
+  .flights-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .flights-table th {
+    font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--terracotta); padding: 6px 0; border-bottom: 1px solid var(--border); text-align: left;
+  }
+  .flights-table td { font-size: 13px; color: var(--dark-brown); padding: 10px 0; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .flights-table tr:last-child td { border-bottom: none; }
+  .flight-name { font-weight: 500; color: var(--midnight); }
+  .flight-number { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .flight-time-badge {
+    display: inline-block; background: var(--terracotta-pale); color: var(--terracotta);
+    border: 1px solid rgba(196,97,58,0.2); border-radius: 100px;
+    font-size: 11px; font-weight: 500; padding: 3px 10px; white-space: nowrap;
+  }
+
+  .pack-cat-header {
+    display: flex; align-items: center; gap: 10px; padding: 14px 20px;
+    background: var(--terracotta-pale); border-bottom: 1px solid rgba(196,97,58,0.15);
+  }
+
+  .pack-cat-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--terracotta); }
+
+  .pack-item {
+    display: flex; align-items: center; gap: 14px; padding: 13px 20px;
+    background: var(--warm-white); border-bottom: 1px solid var(--border);
+    cursor: pointer; user-select: none; transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .pack-item:last-child { border-bottom: none; }
+  .pack-item:active { background: rgba(196,97,58,0.04); }
+  .pack-item.checked { opacity: 0.45; }
+
+  .pack-checkbox {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 1.5px solid rgba(196,97,58,0.35); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .pack-item.checked .pack-checkbox { background: var(--terracotta); border-color: var(--terracotta); }
+
+  .pack-checkbox svg {
+    width: 12px; height: 12px; stroke: white; fill: none;
+    stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+    opacity: 0; transform: scale(0.5); transition: opacity 0.15s, transform 0.15s;
+  }
+
+  .pack-item.checked .pack-checkbox svg { opacity: 1; transform: scale(1); }
+  .pack-item-label { font-size: 14px; color: var(--dark-brown); line-height: 1.4; transition: color 0.2s; }
+  .pack-item.checked .pack-item-label { text-decoration: line-through; color: var(--muted); }
+
+  .reset-wrap { text-align: center; margin-top: 32px; }
+  .reset-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    color: var(--muted); background: none; border: 1px solid var(--border);
+    border-radius: 100px; padding: 10px 24px; cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .reset-btn:hover { color: var(--terracotta); border-color: rgba(196,97,58,0.3); }
+
+  .event-note {
+    display: block; font-size: 11px; color: var(--terracotta);
+    letter-spacing: 0.3px; margin-top: 6px; font-style: italic;
+  }
+
+.event-note a {
+    color: var(--terracotta) !important;
+    text-decoration-color: rgba(196,97,58,0.3);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer { background: var(--cream); text-align: center; padding: 48px 24px; border-top: 1px solid var(--border); }
+  .footer-title { font-family: 'Playfair Display', serif; font-size: 28px; font-style: italic; color: var(--terracotta); margin-bottom: 10px; }
+  .footer-sub { font-size: 13px; color: var(--muted); }
+  .footer-hearts { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+  .heart { width: 8px; height: 8px; background: var(--blush); border-radius: 50%; animation: pulse 2s ease infinite; }
+  .heart:nth-child(2) { animation-delay: 0.3s; background: var(--terracotta-light); }
+  .heart:nth-child(3) { animation-delay: 0.6s; background: var(--gold-light); }
+  .heart:nth-child(4) { animation-delay: 0.9s; background: var(--teal-light); }
+  .heart:nth-child(5) { animation-delay: 1.2s; background: var(--blush); }
+
+  /* ─── BACK TO TOP ─── */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px; width: 32px; height: 32px;
+    background: var(--terracotta); border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; text-decoration: none;
+    opacity: 0; transform: translateY(12px); transition: opacity 0.3s, transform 0.3s;
+    z-index: 100; border: none; cursor: pointer;
+  }
+  .back-to-top.visible { opacity: 0.35; transform: translateY(0); }
+  .back-to-top:hover { opacity: 0.7; }
+  .back-to-top svg { width: 13px; height: 13px; stroke: var(--warm-white); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes scrollFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.4); opacity: 1; } }
+
+  .day-card:nth-child(1) { animation-delay: 0.1s; }
+  .day-card:nth-child(2) { animation-delay: 0.2s; }
+  .day-card:nth-child(3) { animation-delay: 0.3s; }
+  .day-card:nth-child(4) { animation-delay: 0.4s; }
+  .day-card:nth-child(5) { animation-delay: 0.5s; }
+
+  @media (max-width: 600px) {
+    .day-card { grid-template-columns: 90px 1fr; }
+    .day-number { font-size: 40px; }
+    .day-body { padding: 20px 18px; }
+    .day-sidebar { padding: 24px 10px; }
+    .event-time-col { flex: 0 0 56px; }
+    .day-header { flex-direction: column; }
+    .hero-nav-pill { padding: 11px 20px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ LANDING ═══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Girls Trip ✦ May 2026</div>
+    <h1><em>Cartagena</em><br>Colombia</h1>
+    <p class="hero-sub">Sun, sea & sisterhood on the Caribbean coast</p>
+    <nav class="hero-nav">
+      <div class="hero-nav-row">
+        <a class="hero-nav-pill" href="#itinerary">Itinerary</a>
+        <a class="hero-nav-pill" href="#tips">Good to Know</a>
+        <a class="hero-nav-pill" href="#packing">Packing List</a>
+      </div>
+    </nav>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ═══ ITINERARY ═══ -->
+<div id="itinerary">
+  <div class="section-header">
+    <h2>Your 5-Day Escape</h2>
+    <p>Every golden hour, planned perfectly.</p>
+  </div>
+
+  <div class="date-pills-wrap">
+    <div class="date-pills-row">
+      <a class="date-pill" href="#day-1">1 May · Arrival</a>
+      <a class="date-pill" href="#day-2">2 May · Palenque</a>
+    </div>
+    <div class="date-pills-row">
+      <a class="date-pill" href="#day-3">3 May · Boat Party</a>
+      <a class="date-pill" href="#day-4">4 May · Spa Day</a>
+    </div>
+    <div class="date-pills-row">
+      <a class="date-pill" href="#day-5">5 May · Departure</a>
+    </div>
+  </div>
+
+  <section class="days-section">
+
+    <!-- HOTEL INFO -->
+    <div class="hotel-card" style="padding: 0; margin-bottom: 48px;">
+      <div class="hotel-inner">
+        <div class="hotel-header">
+          <span style="font-size:16px;">🏨</span>
+          <span class="hotel-header-title">Where We're Staying</span>
+        </div>
+        <div class="hotel-body">
+          <div>
+            <div class="hotel-detail-label">Hotel</div>
+            <div class="hotel-detail-value">Palmas de Alba Hotel Boutique</div>
+            <div class="hotel-detail-sub"><a href="https://maps.app.goo.gl/S585gK2Hxxux9EdR8" target="_blank" style="color: var(--terracotta); text-decoration: underline; text-decoration-color: rgba(196,97,58,0.3); text-underline-offset: 3px;">Calle San diego 38 #9-20, Centro, Cartagena de Indias, Bolívar, Colombia</a></div>
+          </div>
+          <div>
+            <div class="hotel-detail-label">Check-in</div>
+            <div class="hotel-detail-value">12:00 PM</div>
+            <div class="hotel-detail-sub">1 May 2026</div>
+          </div>
+          <div>
+            <div class="hotel-detail-label">Check-out</div>
+            <div class="hotel-detail-value">11:00 AM</div>
+            <div class="hotel-detail-sub">5 May 2026</div>
+          </div>
+          <div>
+            <div class="hotel-detail-label">Confirmation</div>
+            <div class="hotel-detail-value">#538559</div>
+            <div class="hotel-detail-sub">Keep this handy at check-in</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-card" id="day-1">
+      <div class="day-sidebar">
+        <div class="day-number">01</div>
+        <div class="day-label">Thursday</div>
+        <div class="day-dot"></div>
+      </div>
+      <div class="day-body">
+        <div class="day-header"><div>
+          <div class="day-title">Arrival Day 🌅</div>
+        </div></div>
+        <div class="events-list">
+
+          <!-- FLIGHTS + TRANSPORT -->
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Morning</span></div>
+            <div class="event-content">
+              <div class="event-title">Flights & Arrival</div>
+              <table class="flights-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Arrives</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="flight-name">Alexandria and Lyndsey</div><div class="flight-number">Flight: Copa Airlines CM452</div></td>
+                    <td><span class="flight-time-badge">11:00 AM</span></td>
+                  </tr>
+                  <tr>
+                    <td><div class="flight-name">Brandi</div><div class="flight-number"></div></td>
+                    <td><span class="flight-time-badge">1:00 PM</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="event-desc" style="margin-top: 12px;">Once you clear arrivals, the hotel driver will be waiting with a sign with your names on it to take you directly to the hotel.</div>
+            </div>
+          </div>
+
+          <!-- CHECK IN -->
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Check-in</span></div>
+            <div class="event-content">
+              <div class="event-title">Hotel Arrival</div>
+              <div class="event-desc">Head to the front desk to check in and get settled. If you arrive before the room is ready, the hotel will hold your bags so you can start exploring.</div>
+            </div>
+          </div>
+
+          <!-- EVENING -->
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Afternoon</span></div>
+            <div class="event-content">
+              <div class="event-title">Explore the Walled City</div>
+              <div class="event-desc">Wander the cobblestone streets of Cartagena's old town, colorful balconies, bougainvillea everywhere, and the perfect backdrop for the first group photo. Golden hour here is unreal.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Evening</span></div>
+            <div class="event-content">
+              <div class="event-title">Dinner & Welcome Drinks</div>
+              <div class="event-desc">Celebrate your arrival over fresh ceviche, fried plantains and caipirinhas. Toast to the trip you've been planning for months!</div>
+              <span class="event-tag">Dinner</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card" id="day-2">
+      <div class="day-sidebar">
+        <div class="day-number">02</div>
+        <div class="day-label">Friday</div>
+        <div class="day-dot"></div>
+      </div>
+      <div class="day-body">
+        <div class="day-header"><div>
+          <div class="day-title">Palenque Tour 🥁</div>
+        </div></div>
+        <div class="events-list">
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">8:00 AM</span></div>
+            <div class="event-content">
+              <div class="event-title">Pickup from Hotel</div>
+              <div class="event-desc">Your driver arrives bright and early, set those alarms! Have a light breakfast beforehand if you like.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">9:00 AM</span></div>
+            <div class="event-content">
+              <div class="event-title">San Basilio de Palenque</div>
+              <div class="event-desc">Visit one of the most culturally significant villages in the Americas, the first free African town in the New World. Music, dance, storytelling and a soul-stirring history await.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">12:00 PM</span></div>
+            <div class="event-content">
+              <div class="event-title">Local Lunch 🍽</div>
+              <div class="event-desc">Enjoy a traditional Palenquero meal, rice, beans, and slow-cooked meats. Simple, delicious, unforgettable.</div>
+              <span class="event-note">Lunch included</span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">~2:00 PM</span></div>
+            <div class="event-content">
+              <div class="event-title">Return to Cartagena</div>
+              <div class="event-desc">Back at the hotel by mid-afternoon. Rest up or head out to explore. The rest of the day is yours.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card" id="day-3">
+      <div class="day-sidebar">
+        <div class="day-number">03</div>
+        <div class="day-label">Saturday</div>
+        <div class="day-dot"></div>
+      </div>
+      <div class="day-body">
+        <div class="day-header"><div>
+          <div class="day-title">Boat Party ⛵</div>
+        </div></div>
+        <div class="events-list">
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">7:20 AM</span></div>
+            <div class="event-content">
+              <div class="event-title">Leave Hotel</div>
+              <div class="event-desc">Head to the meetup spot. Wear your swimsuit under your outfit and don't forget sunscreen, water shoes, your waterproof phone case, and your best energy.</div>
+              <span class="event-note">5 min walk</span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">7:30 AM</span></div>
+            <div class="event-content">
+              <div class="event-title">Meet at Pickup Point ⚓</div>
+              <div class="event-desc">This is where the full tour group meets before heading to the boat together. Grab a traditional breakfast arepa nearby if you're early!</div>
+              <span class="event-note">Meet-up: <a href="https://maps.google.com/?q=Centro+Historico+Cartagena+Colombia" target="_blank" style="color: var(--muted); text-decoration: underline; text-decoration-color: rgba(196,97,58,0.3); text-underline-offset: 3px;">Centro Histórico</a></span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">8:30 AM</span></div>
+            <div class="event-content">
+              <div class="event-title">Boat Party, Islas del Rosario</div>
+              <div class="event-desc">Crystal clear turquoise water, music, dancing, snorkeling and cocktails. This is the day you'll be talking about for years.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">12:00 PM</span></div>
+            <div class="event-content">
+              <div class="event-title">Local Lunch 🍽</div>
+              <div class="event-desc">Choice of chicken, fish or vegetarian.</div>
+              <span class="event-note">Lunch & 2 beers included</span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">~3:00 PM</span></div>
+            <div class="event-content">
+              <div class="event-title">Return to Cartagena</div>
+              <div class="event-desc">Head back to the hotel to recharge. Rest up, explore or find a great spot for dinner.</div>
+              <span class="event-note">Drop off: <a href="https://www.google.com/maps?q=Av.+Blas+de+Lezo,+El+Centro,+Cartagena+de+Indias,+Bol%C3%ADvar,+Colombia" target="_blank" style="color: var(--muted); text-decoration: underline; text-decoration-color: rgba(196,97,58,0.3); text-underline-offset: 3px;">Sibarita del Mar</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card" id="day-4">
+      <div class="day-sidebar">
+        <div class="day-number">04</div>
+        <div class="day-label">Sunday</div>
+        <div class="day-dot"></div>
+      </div>
+      <div class="day-body">
+        <div class="day-header"><div>
+          <div class="day-title">Spa Day 🌸</div>
+        </div></div>
+        <div class="events-list">
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Morning</span></div>
+            <div class="event-content">
+              <div class="event-title">Slow Morning & Breakfast</div>
+              <div class="event-desc">After yesterday's adventure, take it slow. Sleep in, have a leisurely breakfast and hydrate!</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">9:30 AM</span></div>
+            <div class="event-content">
+              <div class="event-title">Walk to Spa</div>
+              <div class="event-desc">Head out and enjoy the stroll over.</div>
+              <span class="event-note">7 min walk · <a href="https://maps.google.com/?q=Cl.+de+la+Universidad+38+El+Centro+Cartagena+de+Indias+Colombia" target="_blank" style="color: var(--terracotta); text-decoration: underline; text-decoration-color: rgba(196,97,58,0.3); text-underline-offset: 3px;">Aurum Spa</a></span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">9:45 AM</span></div>
+            <div class="event-content">
+              <div class="event-title">Spa 💆‍♀</div>
+              <div class="event-desc">Indulge in a moment of true luxury and togetherness in a 150-minute experience designed to delight all your senses. Includes a hammam ritual, soothing jacuzzi, and a personalized body massage. You've earned this, queens.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Afternoon</span></div>
+            <div class="event-content">
+              <div class="event-title">Lunch & Explore</div>
+              <div class="event-desc">Grab a bite and take your time wandering the area. A perfect low-key afternoon after a morning of pampering.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Evening</span></div>
+            <div class="event-content">
+              <div class="event-title">Last Evening in Cartagena</div>
+              <div class="event-desc">Shop for souvenirs in the old city, hit a rooftop bar for sunset cocktails, and toast to an incredible trip with a final group dinner. And the moment we've all been waiting for, a drawing to reveal where we're headed next year!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-card" id="day-5">
+      <div class="day-sidebar">
+        <div class="day-number">05</div>
+        <div class="day-label">Monday</div>
+        <div class="day-dot"></div>
+      </div>
+      <div class="day-body">
+        <div class="day-header"><div>
+          <div class="day-title">Departure 💛</div>
+        </div></div>
+        <div class="events-list">
+
+          <!-- FLIGHTS -->
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Departures</span></div>
+            <div class="event-content">
+              <div class="event-title">Flights Home</div>
+              <table class="flights-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Departs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="flight-name">Alexandria</div><div class="flight-number">Flight:Copa Airlines CM203</div></td>
+                    <td><span class="flight-time-badge">6:20 AM</span></td>
+                  </tr>
+                  <tr>
+                    <td><div class="flight-name">Brandi</div><div class="flight-number">Flight: Avianca AV9717</div></td>
+                    <td><span class="flight-time-badge">8:35 AM</span></td>
+                  </tr>
+                  <tr>
+                    <td><div class="flight-name">Lyndsey</div><div class="flight-number">Flight: Copa Airlines CM365</div></td>
+                    <td><span class="flight-time-badge">3:05 PM</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="event-note">Arrive at airport 3 hours before departure</span>
+            </div>
+          </div>
+
+          <!-- CHECKOUT -->
+          <div class="event-item">
+            <div class="event-time-col"><span class="event-time">Checkout</span></div>
+            <div class="event-content">
+              <div class="event-title">Check-out</div>
+              <div class="event-desc">Standard checkout is at XX:XX AM. If you have a later flight, contact the hotel in advance to request a late checkout.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- ═══ GOOD TO KNOW ═══ -->
+<section class="tips-section" id="tips">
+  <div class="tips-inner">
+    <div class="tips-header">
+      <h2>Good to Know</h2>
+      <p>A few things to keep in mind for a smooth trip</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">☀️</div>
+        <div class="tip-title">Sunscreen is non-negotiable</div>
+        <div class="tip-text">The Caribbean sun is intense, especially on boat day. Bring SPF 50+ and reapply generously, bring a reef-safe formula too.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">💧</div>
+        <div class="tip-title">Stay hydrated</div>
+        <div class="tip-text">Drink water constantly! Between the heat, dancing and cocktails, you'll need it. Carry a reusable bottle everywhere.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📱</div>
+        <div class="tip-title">Set your alarms</div>
+        <div class="tip-text">Days 2, 3 and 4 all have morning start times. Set two alarms the night before and agree on a group WhatsApp check-in.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">💃</div>
+        <div class="tip-title">Bring pesos & card</div>
+        <div class="tip-text">Many local spots are cash only. Exchange Colombian pesos with your bank before leaving as it's typically cheaper than exchanging abroad. Keep small bills handy for tips and street food.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PACKING LIST ═══ -->
+<section class="packing-section" id="packing">
+  <div class="packing-inner">
+    <div class="packing-header">
+      <h2>Packing List</h2>
+      <p>Tap each item to check it off as you pack</p>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Packed so far</span>
+        <span id="progressText">0 of 0 items</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>👗</span><span class="pack-cat-title">Clothing</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Bathing suits (at least 2)</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Cover ups / kaftans</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Casual daytime outfits</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Evening / going out outfits</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Shorts</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Light breezy tops</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Underwear</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Socks</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Lightweight pajamas</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Light cardigan or wrap (for AC)</span></div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>👟</span><span class="pack-cat-title">Shoes</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Water shoes (for boat day)</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Sandals / flip flops</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Casual sneakers or flats</span></div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>💍</span><span class="pack-cat-title">Jewelry & Accessories</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Everyday jewelry</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Going out jewelry</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Sunglasses</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Sun hat or cap</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Hair ties & clips</span></div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>🧴</span><span class="pack-cat-title">Toiletries & Skincare</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Sunscreen SPF 50+ (reef-safe for boat day)</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Body wash</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Deodorant</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Razor</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Moisturizer</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Lip balm with SPF</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Insect repellent</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Face wash & skincare routine</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Hand sanitizer</span></div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>💄</span><span class="pack-cat-title">Hair & Makeup</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Makeup essentials</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Makeup remover wipes</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Travel hairbrush / comb</span></div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>📱</span><span class="pack-cat-title">Tech & Essentials</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Phone charger</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Portable power bank</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Earphones / AirPods</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Waterproof phone case (for boat day)</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Camera (optional)</span></div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>👜</span><span class="pack-cat-title">Bags</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Beach bag / tote</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Small crossbody bag for evenings</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Waterproof dry bag (for boat day)</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Travel wallet / passport holder</span></div>
+    </div>
+
+    <div class="pack-category">
+      <div class="pack-cat-header"><span>📋</span><span class="pack-cat-title">Documents & Money</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Passport</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Travel insurance details</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Copies of bookings / itinerary</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Exchange pesos with your bank at least 1 week before departure</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Credit / debit card</span></div>
+      <div class="pack-item" onclick="toggle(this)"><div class="pack-checkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"></polyline></svg></div><span class="pack-item-label">Emergency contact list</span></div>
+    </div>
+
+    <div class="reset-wrap">
+      <button class="reset-btn" onclick="resetAll()">Reset all</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-title">Here's to the girls 🌺</div>
+  <div class="footer-sub">Cartagena, Colombia &nbsp;·&nbsp; 1–5 May 2026</div>
+  <div class="footer-hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</a>
+
+<script>
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  function updateProgress() {
+    const all = document.querySelectorAll('.pack-item');
+    const done = document.querySelectorAll('.pack-item.checked').length;
+    const total = all.length;
+    document.getElementById('progressFill').style.width = (total ? (done / total) * 100 : 0) + '%';
+    document.getElementById('progressText').textContent = done + ' of ' + total + ' items';
+  }
+
+  function toggle(el) {
+    el.classList.toggle('checked');
+    updateProgress();
+  }
+
+  function resetAll() {
+    document.querySelectorAll('.pack-item.checked').forEach(el => el.classList.remove('checked'));
+    updateProgress();
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
