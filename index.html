@@ -874,6 +874,10 @@
     btn.classList.toggle('visible', window.scrollY > 400);
   });
 
+  function getKey(el) {
+    return 'pack-' + el.querySelector('.pack-item-label').textContent.trim();
+  }
+
   function updateProgress() {
     const all = document.querySelectorAll('.pack-item');
     const done = document.querySelectorAll('.pack-item.checked').length;
@@ -884,14 +888,27 @@
 
   function toggle(el) {
     el.classList.toggle('checked');
+    localStorage.setItem(getKey(el), el.classList.contains('checked') ? '1' : '0');
     updateProgress();
   }
 
   function resetAll() {
-    document.querySelectorAll('.pack-item.checked').forEach(el => el.classList.remove('checked'));
+    document.querySelectorAll('.pack-item.checked').forEach(el => {
+      el.classList.remove('checked');
+      localStorage.setItem(getKey(el), '0');
+    });
     updateProgress();
   }
 
+  function loadSaved() {
+    document.querySelectorAll('.pack-item').forEach(el => {
+      if (localStorage.getItem(getKey(el)) === '1') {
+        el.classList.add('checked');
+      }
+    });
+  }
+
+  loadSaved();
   updateProgress();
 </script>
 
